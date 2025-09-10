@@ -1,0 +1,207 @@
+.header {
+  color: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  position: absolute;
+  border-bottom: 1px solid #ffffff33;
+  padding: 0;
+  height: 88px;
+}
+
+.header-black {
+  color: #1a1b22;
+  background-color: #ffffff;
+  border-bottom: 1px solid #0a0a0a33;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 104px 0 104px;
+  margin: 0;
+}
+
+.header__title {
+  font-family: "Roboto Slab";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  width: 100%;
+  position: relative;
+}
+
+.header__home-button {
+  align-content: center;
+  padding-bottom: 23px;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: transparent;
+  color: #b6bcbf;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.header__home-button-black {
+  color: #1a1b22;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 21px;
+}
+
+.header__home-button-black:hover {
+  border-bottom: 2px solid #1a1b22;
+}
+
+.header__home-button:hover {
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+.header__signin-button {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 500px;
+  width: 178px;
+  height: 48px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 1);
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 100px;
+  padding: 12px 15px;
+  background-color: transparent;
+}
+
+.header__nav {
+  display: flex;
+  gap: 42px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: baseline;
+}
+
+.header__saved-articles {
+  align-content: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #b6bcbf;
+  width: 114px;
+  height: 24px;
+  padding-bottom: 21px;
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.header__saved-articles-black {
+  color: #1a1b22;
+  font-family: "Roboto";
+  width: 114px;
+  height: 24px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 19px;
+}
+
+.header__saved-articles-black:hover {
+  border-bottom: 2px solid #1a1b22;
+}
+
+.header__saved-articles:hover {
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+.header__profile-button {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 500px;
+  width: 112px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 100px;
+  padding: 12px 15px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.header__profile-button-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 650px) {
+  .header__title {
+    font-family: "Roboto Slab";
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    padding: 0;
+    width: 117px;
+    height: 24px;
+  }
+
+  .header-container {
+    display: flex;
+    padding: 0;
+    margin: 16px;
+    max-width: fit-content;
+  }
+
+  .header__nav {
+    flex-direction: column;
+  }
+
+  .header-container-text {
+    margin: 0;
+  }
+
+  .header__home-button,
+  .header__signin-button {
+    visibility: hidden;
+  }
+
+  .header__saved-articles,
+  .header__profile-button,
+  .header__saved-articles-black,
+  .header__home-button-black {
+    visibility: hidden;
+  }
+
+  .header-black {
+    min-width: 300px;
+    max-height: 56px;
+  }
+}
