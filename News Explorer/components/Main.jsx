@@ -24,7 +24,7 @@ function Main({ handleSearch }) {
         />
         <div className="text-wrapper">
           <h1 className="main-page__seach-title">
-            What's going on in <br />
+            What&apos;s going on in <br />
             the world?
           </h1>
           <h2 className="main-page__seach-sub-title">

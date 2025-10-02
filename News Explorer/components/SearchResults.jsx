@@ -1,8 +1,15 @@
 import "../blocks/SearchResults.css";
 import NewsCard from "../components/NewsCard";
 import Preloader from "../components/Preloader";
+import { useState } from "react";
 
-function SearchResults({articles, isLoading, savedArticles, handleSavedArticle, handleRemoveArticle}) {
+function SearchResults({articles, isLoading, savedArticles, handleSavedArticle, handleRemoveArticle, setSearchKeyword, searchQuery}) {
+
+  const [visibleCount, setVisibleCount] = useState(6);
+
+  const generateMoreCards = () =>{
+    setVisibleCount((prevCount) => prevCount + 3);
+  };
 
   return (
     <div className="search__results-container">
@@ -13,17 +20,20 @@ function SearchResults({articles, isLoading, savedArticles, handleSavedArticle, 
       <h1 className="search__results-title">Search results</h1>
       )}
       <div className="search__results">
-        {articles.slice(0,6).map((article) => (
+        {articles.slice(0,visibleCount).map((article) => (
   <NewsCard  key={article.url}
   article={article}
   savedArticles={savedArticles}
   handleSavedArticle={handleSavedArticle}
-  handleRemoveArticle={handleRemoveArticle} />
+  handleRemoveArticle={handleRemoveArticle}
+  setSearchKeyword={setSearchKeyword}
+  searchQuery={searchQuery}
+  />
 ))}
       </div>
       <div className="search__results-more-button-wrapper">
         {(!isLoading &&
-      <button className="search__results-more-button">Show more</button>
+      <button onClick={generateMoreCards} className="search__results-more-button">Show more</button>
         )}
       </div>
     </div>

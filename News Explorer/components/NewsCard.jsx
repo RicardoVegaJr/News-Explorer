@@ -9,23 +9,26 @@ import ActiveBookmark from "../src/assets/Bookmarked.svg";
 import trashIconGray from "../src/assets/trashIconGray.svg";
 
 
-function NewsCard({article,savedArticles = [], handleSavedArticle, handleRemoveArticle}) {
+function NewsCard({article,savedArticles = [], handleSavedArticle, handleRemoveArticle,searchQuery}) {
 
-    const { currentUser, isLoggedIn } = useContext(CurrentUserContext);
+
+    const { isLoggedIn } = useContext(CurrentUserContext);
       const [isBookmarked, setIsBookmarked] = useState(false);
+     
 
        useEffect(() => {
     const alreadySaved = savedArticles.some((a) => a.url === article.url);
     setIsBookmarked(alreadySaved);
   }, [savedArticles, article]);
-    
+
 
 const handleBookmarkClick = () => {
   if (isBookmarked) {
     handleRemoveArticle(article);
     setIsBookmarked(false);
+    
   } else {
-    handleSavedArticle(article);
+    handleSavedArticle(article, searchQuery);
     setIsBookmarked(true);
   }
 };
@@ -39,10 +42,12 @@ if (location.pathname === "/"){
   
   return (
     <div className="card__container">
-      {isLoggedIn &&  (
-      <button className="card__bookmark" onClick={handleBookmarkClick}>
+      <div className="card__keyword"></div>
+      <button disabled={!isLoggedIn} className="card__bookmark" onClick={handleBookmarkClick}>
       <img src={iconSrc} className="card__bookmark-empty card__bookmark-remove"/>
       </button>
+      {!isLoggedIn && (
+      <button  className="card__bookmark-disclaimer" >Sign in to save articles</button>
       )}
       <img className="card__image" src={article.urlToImage || NewsCardImage}  alt="" />
       <div className="card__text-wrapper">

@@ -27,6 +27,11 @@
   gap: 20px;
 }
 
+.footer__tripleten-link{
+  text-decoration: none;
+  color: inherit;
+}
+
 .footer__links {
   display: flex;
   justify-content: space-between;

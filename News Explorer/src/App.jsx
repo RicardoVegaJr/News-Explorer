@@ -8,12 +8,12 @@ import About from "../components/About";
 import LoginModal from "../components/SigninModal";
 import SignupModal from "../components/RegisterModal";
 import SavedArticles from "../components/SavedArticles";
+import MobileMenu from "../components/MobileMenu";
 import { authorize } from "../utils/Auth";
 import SearchResults from "../components/SearchResults";
 import { searchArticles } from "../utils/Api";
 import { CurrentUserContext } from "../context/CurrentUserContext";
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { checkToken } from "../utils/Auth";
 
 function App() {
   const navigate = useNavigate();
@@ -24,6 +24,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({
     name: "",
   });
+  const [searchQuery, setSearchKeyword] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [aboutInfo, toggleAboutinfo] = useState(false);
   const [savedArticles, setSavedArticles] = useState(() => {
@@ -31,33 +32,31 @@ function App() {
     return stored ? JSON.parse(stored) : [];
   });
 
-
-
-
-   const handleSavedArticle = (article) => {
+  const handleSavedArticle = (article, keyword) => {
+    const articleWithKeyword = { ...article, keyword };
     setSavedArticles((prev) => {
-      const updated = [article, ...prev];
+      const updated = [articleWithKeyword, ...prev];
       localStorage.setItem("savedArticles", JSON.stringify(updated));
       return updated;
     });
   };
 
   const handleRemoveArticle = (article) => {
-    setSavedArticles((prev ) => {
+    setSavedArticles((prev) => {
       const updated = prev.filter((a) => a.title !== article.title);
       localStorage.setItem("savedArticles", JSON.stringify(updated));
       return updated;
-    })
-  }
+    });
+  };
 
   localStorage.clear();
 
-  const handleSearch = async ({ search }) => {
+  const handleSearch = async ({ searchQuery }) => {
     setIsLoading(true);
     setSearchInitiated(true);
-
+    setSearchKeyword(searchQuery);
     try {
-      const data = await searchArticles(search);
+      const data = await searchArticles(searchQuery);
       setTimeout(() => {
         setArticles(data.articles);
         setIsLoading(false);
@@ -79,7 +78,11 @@ function App() {
     console.log("Close Modal Test Complete");
   };
 
-  const handleLogin = ({ email, password }) => {
+  const handleMobileClick = () => {
+    setActiveModal("mobileMenu");
+  };
+
+  const handleLogin = ({ email, password}) => {
     if (!email || !password) {
       console.log("Login: Email or password missing.");
       setIsLoggedIn(false);
@@ -88,8 +91,13 @@ function App() {
     return authorize(email, password)
       .then((data) => {
         console.log("Login successful, received token:", data.token);
+        localStorage.setItem("jwt", data.token);
+        return checkToken(data.token);
+      })
+      .then((res) => {
+        console.log("Token verified:", res);
+        setCurrentUser(res.data);
         setIsLoggedIn(true);
-        setCurrentUser({ name: "User" });
         closeActiveModal();
       })
       .catch((err) => {
@@ -107,43 +115,70 @@ function App() {
   };
 
   return (
-    
-      <CurrentUserContext.Provider value={{ currentUser, isLoggedIn }}>
-        <div className="page">
-          <Header
-            handleSigninClick={handleSigninClick}
-            handleLogout={handleLogout}
-            toggleAboutInfo={toggleAboutinfo}
+    <CurrentUserContext.Provider value={{ currentUser, isLoggedIn }}>
+      <div className="page">
+        <Header
+          handleSigninClick={handleSigninClick}
+          handleLogout={handleLogout}
+          toggleAboutInfo={toggleAboutinfo}
+          handleMobileClick={handleMobileClick}
+        />
+        <Routes>
+          <Route path="/" element={<Main handleSearch={handleSearch} />} />
+          <Route
+            path="/savedarticles"
+            element={
+              <SavedArticles
+                searchQuery={searchQuery}
+                savedArticles={savedArticles}
+                handleRemoveArticle={handleRemoveArticle}
+              />
+            }
           />
-          <Routes>
-            <Route path="/" element={<Main handleSearch={handleSearch} />} />
-            <Route path="/savedarticles" element={<SavedArticles  savedArticles={savedArticles} handleRemoveArticle={handleRemoveArticle} />} />
-          </Routes>
-          {searchInitiated && location.pathname !== "/savedarticles" && (
-            <SearchResults  savedArticles={savedArticles} handleSavedArticle={handleSavedArticle} handleRemoveArticle={handleRemoveArticle} isLoading={isLoading} articles={articles} />
-          )}
-          {!aboutInfo  && <About /> }
-          <Footer />
-          {activeModal === "signinModal" && (
-            <LoginModal
-              isOpen={activeModal === "signinModal"}
-              onClose={closeActiveModal}
-              setActiveModal={setActiveModal}
-              activeModal={activeModal}
-              handleLogin={handleLogin}
-            />
-          )}
-          {activeModal === "signupModal" && (
-            <SignupModal
-              isOpen={activeModal === "signupModal"}
-              onClose={closeActiveModal}
-              setActiveModal={setActiveModal}
-              activeModal={activeModal}
-            />
-          )}
-        </div>
-      </CurrentUserContext.Provider>
-    
+        </Routes>
+        {searchInitiated && location.pathname !== "/savedarticles" && (
+          <SearchResults
+            searchQuery={searchQuery}
+            setSearchKeyword={setSearchKeyword}
+            savedArticles={savedArticles}
+            handleSavedArticle={handleSavedArticle}
+            handleRemoveArticle={handleRemoveArticle}
+            isLoading={isLoading}
+            articles={articles}
+          />
+        )}
+        {!aboutInfo && <About />}
+        <Footer />
+        {activeModal === "signinModal" && (
+          <LoginModal
+            isOpen={activeModal === "signinModal"}
+            onClose={closeActiveModal}
+            setActiveModal={setActiveModal}
+            activeModal={activeModal}
+            handleLogin={handleLogin}
+          />
+        )}
+        {activeModal === "signupModal" && (
+          <SignupModal
+            isOpen={activeModal === "signupModal"}
+            onClose={closeActiveModal}
+            setActiveModal={setActiveModal}
+            activeModal={activeModal}
+            handleLogin={handleLogin}
+          />
+        )}
+        {activeModal === "mobileMenu" && (
+          <MobileMenu
+            isOpen={activeModal === "mobileMenu"}
+            onClose={closeActiveModal}
+            closeActiveModal={closeActiveModal}
+            handleSigninClick={handleSigninClick}
+            toggleAboutInfo={toggleAboutinfo}
+            handleLogout={handleLogout}
+          />
+        )}
+      </div>
+    </CurrentUserContext.Provider>
   );
 }
 

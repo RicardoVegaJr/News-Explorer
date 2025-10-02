@@ -13,10 +13,11 @@ export const authorize = (email, password) => {
 };
 
 export const checkToken = (token) => {
-  // Pretend we did a fetch request that gave us back a user
-  return new Promise((resolve, reject) => {
+  if (token){
+  return new Promise((resolve) => {
     resolve({
-      data: { name: "fake user", email: "fake@example,com", _id: "fake-id" },
+      data: { name: "User", email: "test@test.com", _id: "fake-id" },
     });
   });
+}
 };

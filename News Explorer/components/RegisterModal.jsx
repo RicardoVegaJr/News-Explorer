@@ -1,23 +1,17 @@
-import { useState } from "react";
 import ModalWithForm from "./ModalWithForm";
+import { useFormAndValidation } from "./FormValidator";
 
 const SignupModal = ({ handleLogin, onClose, isOpen, activeModal, setActiveModal }) => {
-  const [data, setData] = useState({
+  const { values, errors, isValid, handleChange, resetForm } = useFormAndValidation({
     email: "",
     password: "",
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleLogin(data);
+    if (!isValid) return;
+    handleLogin(values);
+    resetForm(); 
   };
 
   return (
@@ -41,7 +35,7 @@ const SignupModal = ({ handleLogin, onClose, isOpen, activeModal, setActiveModal
         type="email"
         placeholder="Enter email"
         onChange={handleChange}
-        value={data.email}
+        value={values.email || ""}
         required
       ></input>
 
@@ -55,7 +49,7 @@ const SignupModal = ({ handleLogin, onClose, isOpen, activeModal, setActiveModal
         type="password"
         placeholder="Enter password"
         onChange={handleChange}
-        value={data.password}
+        value={values.password || ""}
         required
       ></input>
 
@@ -69,9 +63,11 @@ const SignupModal = ({ handleLogin, onClose, isOpen, activeModal, setActiveModal
         type="username"
         placeholder="Enter username"
         onChange={handleChange}
-        value={data.username}
+        value={values.username || ""}
         required
       ></input>
+      {errors.email && <span className="modal__form-error">{errors.email}</span>}
+      {errors.password && <span className="modal__form-error">{errors.password}</span>}
     </ModalWithForm>
   );
 };

@@ -4,7 +4,6 @@
   right: 0;
   left: 0;
   bottom: 0;
-  z-index: 999;
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
@@ -12,6 +11,7 @@
   display: flex;
   margin: 0;
   padding: 0;
+  z-index: 100;
 }
 .modal_opened {
   visibility: visible;
@@ -124,4 +124,34 @@
   line-height: 100%;
   letter-spacing: 0%;
   text-align: center;
+}
+
+.modal__form-error{
+  font-family: "Inter";
+font-weight: 400;
+font-size: 12px;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+color:#FF0000;
+margin: 0;
+padding:0;
+
+}
+
+@media (max-width: 600px) {
+  .modal__close{
+    right:1px;
+  }
+}
+
+@media (max-width: 320px) {
+  .modal {
+    align-items: flex-end;
+  }
+  .modal__container {
+    height: 85vh;
+    border-radius: 20px 20px 0 0;
+  }
+  
 }

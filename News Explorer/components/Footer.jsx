@@ -1,19 +1,49 @@
 import "../blocks/Footer.css";
 import GitIcon from "../src/assets/GitIcon.svg";
 import FBIcon from "../src/assets/FBIcon.svg";
+import { useNavigate } from "react-router-dom";
 
 function Footer() {
+  const navigate = useNavigate();
+
+  const setPath = () => {
+    navigate("/");
+  };
+
   return (
     <footer className="footer">
       <p>© 2025 Supersite, Powered by News API</p>
       <div className="footer__nav">
         <ul className="footer__links">
-          <li className="footer__home">Home</li>
-          <li className="footer__tripleten">TripleTen</li>
+          <li onClick={setPath} className="footer__home">
+            Home
+          </li>
+          <li className="footer__tripleten">
+            <a
+              href="https://tripleten.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer__tripleten-link"
+            >
+              TripleTen
+            </a>
+          </li>
         </ul>
         <div className="footer__icons">
-          <img src={GitIcon} className="footer__icon-button"></img>
-          <img src={FBIcon}className="footer__icon-button"></img>
+          <a
+            href="https://github.com/RicardoVegaJr"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={GitIcon} className="footer__icon-button"></img>
+          </a>
+          <a
+            href="https://tripleten.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={FBIcon} className="footer__icon-button"></img>
+          </a>
         </div>
       </div>
     </footer>

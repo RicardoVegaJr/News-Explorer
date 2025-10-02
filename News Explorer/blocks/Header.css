@@ -20,8 +20,13 @@
 .header-container {
   display: flex;
   justify-content: space-between;
-  padding: 30px 104px 0 104px;
-  margin: 0;
+  padding: 30px 104px 0 0;
+  margin-right: 40px;
+  position: relative;
+}
+
+.header__mobile-menu-icon {
+  visibility: hidden;
 }
 
 .header__title {
@@ -141,8 +146,6 @@
   font-weight: 500px;
   width: 112px;
   height: 48px;
-  border: 1px solid rgba(255, 255, 255, 1);
-  color: #ffffff;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -153,6 +156,28 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  color: #ffffff;
+}
+
+.header__profile-button-black {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 500px;
+  width: 112px;
+  height: 48px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 100px;
+  padding: 12px 15px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 1px solid black;
+  color: black;
 }
 
 .header__profile-button-icon {
@@ -161,7 +186,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 653px) {
   .header__title {
     font-family: "Roboto Slab";
     font-weight: 700;
@@ -178,6 +203,7 @@
     padding: 0;
     margin: 16px;
     max-width: fit-content;
+    flex-direction: row-reverse;
   }
 
   .header__nav {
@@ -199,9 +225,22 @@
   .header__home-button-black {
     visibility: hidden;
   }
-
   .header-black {
     min-width: 300px;
     max-height: 56px;
+  }
+
+  .header__mobile-menu-icon {
+    background-color: transparent;
+    border-style: none;
+    width: 24px;
+    height: 24px;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 320px) {
+  .header-container {
+    gap: 147px;
   }
 }
