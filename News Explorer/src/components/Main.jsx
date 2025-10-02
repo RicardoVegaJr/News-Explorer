@@ -1,5 +1,5 @@
-import MainWallpaper from "../src/assets/HomeWallpaper.jpg";
-import "../blocks/Main.css";
+import MainWallpaper from "../assets/HomeWallpaper.jpg";
+import "../../blocks/Main.css";
 import { useState } from "react";
 
 function Main({ handleSearch }) {

@@ -1,5 +1,5 @@
-import AboutImage from "../src/assets/AboutImage.jpg";
-import "../blocks/About.css";
+import AboutImage from "../assets/AboutImage.jpg";
+import "../../blocks/About.css";
 
 
 

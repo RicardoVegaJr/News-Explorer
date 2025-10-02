@@ -1,4 +1,4 @@
-import "../blocks/SearchResults.css";
+import "../../blocks/SearchResults.css";
 import NewsCard from "../components/NewsCard";
 import Preloader from "../components/Preloader";
 import { useState } from "react";

@@ -1,12 +1,12 @@
-import "../blocks/NewsCard.css";
+import "../../blocks/NewsCard.css";
 import { useState } from "react";
 import { useContext } from 'react';
 import { useEffect } from "react";
-import { CurrentUserContext } from "../context/CurrentUserContext";
-import NewsCardImage from "../src/assets/NewsCardImage.jpg";
-import NoBookmark from "../src/assets/NoBookmark.svg"
-import ActiveBookmark from "../src/assets/Bookmarked.svg";
-import trashIconGray from "../src/assets/trashIconGray.svg";
+import { CurrentUserContext } from "../../context/CurrentUserContext";
+import NewsCardImage from "../assets/NewsCardImage.jpg";
+import NoBookmark from "../assets/NoBookmark.svg"
+import ActiveBookmark from "../assets/Bookmarked.svg";
+import trashIconGray from "../assets/trashIconGray.svg";
 
 
 function NewsCard({article,savedArticles = [], handleSavedArticle, handleRemoveArticle,searchQuery}) {

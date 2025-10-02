@@ -1,6 +1,6 @@
-import "../blocks/Footer.css";
-import GitIcon from "../src/assets/GitIcon.svg";
-import FBIcon from "../src/assets/FBIcon.svg";
+import "../../blocks/Footer.css";
+import GitIcon from "../assets/GitIcon.svg";
+import FBIcon from "../assets/FBIcon.svg";
 import { useNavigate } from "react-router-dom";
 
 function Footer() {

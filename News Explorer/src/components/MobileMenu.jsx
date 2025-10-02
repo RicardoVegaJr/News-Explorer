@@ -1,7 +1,7 @@
-import "../blocks/MobileMenu.css";
+import "../../blocks/MobileMenu.css";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { CurrentUserContext } from "../context/CurrentUserContext";
+import { CurrentUserContext } from "../../context/CurrentUserContext";
 
 function MobileMenu({
   onClose,

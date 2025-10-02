@@ -1,12 +1,12 @@
-import "../blocks/Header.css";
-import ProfileIcon from "../src/assets/ProfileImageIcon.svg";
-import ProfileIconBlack from "../src/assets/ProfileImageIconBlack.svg";
+import "../../blocks/Header.css";
+import ProfileIcon from "../assets/ProfileImageIcon.svg";
+import ProfileIconBlack from "../assets/ProfileImageIconBlack.svg";
 import { useContext } from "react";
-import { CurrentUserContext } from "../context/CurrentUserContext";
+import { CurrentUserContext } from "../../context/CurrentUserContext";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import menuIcon from "../src/assets/menuIcon.svg";
-import menuIconBlack from "../src/assets/menuIconBlack.svg";
+import menuIcon from "../assets/menuIcon.svg";
+import menuIconBlack from "../assets/menuIconBlack.svg";
 
 
 function Header({
