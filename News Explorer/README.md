@@ -6,7 +6,7 @@ The project follows a detailed Figma layout and strict guidelines to ensure cons
 ---
 
 ## 🚀 Live Demo
-🔗 [View the project here](https://RicardoVegaJr.github.io/News-Explorer/)
+🔗 [View the project here]("https://phenomenal-maamoul-3de5ca.netlify.app/")
 
 ---
 

@@ -35,25 +35,20 @@
 //   });
 // }
 
-const baseUrl = "https://newsapi.org/v2";
+const baseUrl =
+  import.meta.env.DEV
+    ? "http://localhost:8888/.netlify/functions/news"
+    : "/.netlify/functions/news";
 
 export function searchArticles(q) {
-  console.log(q);
-  return fetch(
-    `${baseUrl}/everything?q=${q}&apiKey=183cde90adf34e76a28af0b97bc78e22`,
-    {
-      method: "GET",
-    }
-  ).then((res) => {
-      if (res.ok) {
-        return res.json();
+  return fetch(`${baseUrl}?q=${encodeURIComponent(q)}`)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(`Error: ${res.statusText}`);
       }
-      throw new Error(`Error: ${res.statusText}`);
+      return res.json();
     })
-    .then((data) => {
-      console.log(data);
-      return data;
-    })
+    .then((data) => data)
     .catch((err) => {
       console.error(err);
     });
