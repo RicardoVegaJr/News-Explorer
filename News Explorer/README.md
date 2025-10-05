@@ -5,8 +5,32 @@ The project follows a detailed Figma layout and strict guidelines to ensure cons
 
 ---
 
+🧪 Test Credentials
+
+To access and test the front-end functionality:
+
+Login Credentials:
+
+Email: test@test.com
+
+Password: password
+
+Register Credentials (for testing registration flow):
+
+Email: test@test.com
+
+Password: password
+
+Username: user
+
+⚠️ You must log in using the credentials above to fully experience the authentication and article-saving features.
+
+---
+
 ## 🚀 Live Demo
-🔗 [View the project here]("https://phenomenal-maamoul-3de5ca.netlify.app/")
+🔗 [View the project here]("https://rvega-news-ex.netlify.app/")
+
+
 
 ---
 
