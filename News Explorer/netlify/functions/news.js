@@ -1,5 +1,17 @@
 export async function handler(event, context) {
-  const API_KEY = process.env.NEWS_API_KEY; // from Netlify env vars
+  if (event.httpMethod === "OPTIONS") {
+    return {
+      statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+      },
+      body: "",
+    };
+  }
+
+  const API_KEY = process.env.NEWS_API_KEY;
   const { q } = event.queryStringParameters;
 
   try {
@@ -10,22 +22,29 @@ export async function handler(event, context) {
     if (!response.ok) {
       return {
         statusCode: response.status,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
         body: JSON.stringify({ error: `News API error: ${response.statusText}` }),
       };
     }
 
     const data = await response.json();
+
     return {
       statusCode: 200,
       headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*", // allow frontend access
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type",
       },
       body: JSON.stringify(data),
     };
   } catch (err) {
     return {
       statusCode: 500,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
       body: JSON.stringify({ error: err.message }),
     };
   }

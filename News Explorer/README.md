@@ -28,8 +28,17 @@ Username: user
 ---
 
 ## 🚀 Live Demo
-🔗 [View the project here]("https://rvega-news-ex.netlify.app/")
+🔗 [View the project here](https://rvega-news-ex.netlify.app/)
 
+
+
+---
+## 🚀 Local Demo with Command: netlify dev
+
+This command starts both the React frontend and a small local backend powered by Netlify Functions. The local backend simulates real API responses—such as authentication, token validation, and article-saving—allowing you to fully test the app in a local environment.
+
+back-end will run on :  http://localhost:8888 
+font-end will run on : http://localhost:5173/
 
 
 ---
