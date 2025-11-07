@@ -5,7 +5,7 @@ import { useState } from "react";
 
 function SearchResults({articles, isLoading, savedArticles, handleSavedArticle, handleRemoveArticle, setSearchKeyword, searchQuery}) {
 
-  const [visibleCount, setVisibleCount] = useState(6);
+  const [visibleCount, setVisibleCount] = useState(3);
 
   const generateMoreCards = () =>{
     setVisibleCount((prevCount) => prevCount + 3);

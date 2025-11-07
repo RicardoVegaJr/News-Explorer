@@ -25,7 +25,7 @@ const SignupModal = ({ handleLogin, onClose, isOpen, activeModal, setActiveModal
       activeModal={activeModal}
       setActiveModal={setActiveModal}
     >
-      <label className="modal__form-input-title" htmlFor="email">
+      <label className="modal__form-title" htmlFor="email">
         Email
       </label>
       <input
@@ -39,7 +39,7 @@ const SignupModal = ({ handleLogin, onClose, isOpen, activeModal, setActiveModal
         required
       ></input>
 
-      <label className="modal__form-input-title" htmlFor="password">
+      <label className="modal__form-title" htmlFor="password">
         Password
       </label>
       <input
@@ -53,7 +53,7 @@ const SignupModal = ({ handleLogin, onClose, isOpen, activeModal, setActiveModal
         required
       ></input>
 
-      <label className="modal__form-input-title" htmlFor="password">
+      <label className="modal__form-title" htmlFor="password">
         Username
       </label>
       <input

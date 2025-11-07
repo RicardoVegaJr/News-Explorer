@@ -12,7 +12,7 @@ function Footer() {
 
   return (
     <footer className="footer">
-      <p>© 2025 Supersite, Powered by News API</p>
+      <p className="footer__copyright">© 2025 Supersite, Powered by News API</p>
       <div className="footer__nav">
         <ul className="footer__links">
           <li onClick={setPath} className="footer__home">

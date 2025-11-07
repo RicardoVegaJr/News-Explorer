@@ -2,7 +2,7 @@ import "../../blocks/ModalWithForm.css";
 
 function ModalWithForm({ onSubmit, isOpen, onClose, title, buttonText, children, activeModal, setActiveModal }) {
   return (
-    <div className={`modal ${isOpen ? "modal_opened" : ""}`}>
+    <div className={`modal ${isOpen ? "modal--opened" : ""}`}>
       <div className="modal__container">
         <button type="button" onClick={onClose} className="modal__close" />
         <form onSubmit={onSubmit} action="" className="modal__form">

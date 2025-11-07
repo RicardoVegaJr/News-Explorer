@@ -4,13 +4,11 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import Header from "../src/components/Header";
 import Main from "../src/components/Main";
 import Footer from "../src/components/Footer";
-import About from "../src/components/About";
 import LoginModal from "../src/components/SigninModal";
 import SignupModal from "../src/components/RegisterModal";
 import SavedArticles from "../src/components/SavedArticles";
 import MobileMenu from "../src/components/MobileMenu";
 import { authorize } from "../utils/Auth";
-import SearchResults from "../src/components/SearchResults";
 import { searchArticles } from "../utils/Api";
 import { CurrentUserContext } from "../context/CurrentUserContext";
 import { checkToken } from "../utils/Auth";
@@ -82,7 +80,7 @@ function App() {
     setActiveModal("mobileMenu");
   };
 
-  const handleLogin = ({ email, password}) => {
+  const handleLogin = ({ email, password }) => {
     if (!email || !password) {
       console.log("Login: Email or password missing.");
       setIsLoggedIn(false);
@@ -124,7 +122,25 @@ function App() {
           handleMobileClick={handleMobileClick}
         />
         <Routes>
-          <Route path="/" element={<Main handleSearch={handleSearch} />} />
+          <Route
+            path="/"
+            element={
+              <Main
+                handleSearch={handleSearch}
+                searchQuery={searchQuery}
+                setSearchKeyword={setSearchKeyword}
+                savedArticles={savedArticles}
+                handleSavedArticle={handleSavedArticle}
+                handleRemoveArticle={handleRemoveArticle}
+                isLoading={isLoading}
+                articles={articles}
+                searchInitiated={searchInitiated}
+                aboutInfo={aboutInfo}
+              >
+                {" "}
+              </Main>
+            }
+          />
           <Route
             path="/savedarticles"
             element={
@@ -136,18 +152,6 @@ function App() {
             }
           />
         </Routes>
-        {searchInitiated && location.pathname !== "/savedarticles" && (
-          <SearchResults
-            searchQuery={searchQuery}
-            setSearchKeyword={setSearchKeyword}
-            savedArticles={savedArticles}
-            handleSavedArticle={handleSavedArticle}
-            handleRemoveArticle={handleRemoveArticle}
-            isLoading={isLoading}
-            articles={articles}
-          />
-        )}
-        {!aboutInfo && <About />}
         <Footer />
         {activeModal === "signinModal" && (
           <LoginModal

@@ -25,7 +25,7 @@ const LoginModal = ({ handleLogin, onClose, isOpen, activeModal, setActiveModal 
       activeModal={activeModal}
       setActiveModal={setActiveModal}
     >
-      <label className="modal__form-input-title" htmlFor="email">
+      <label className="modal__form-title" htmlFor="email">
         Email
       </label>
       <input
@@ -38,7 +38,7 @@ const LoginModal = ({ handleLogin, onClose, isOpen, activeModal, setActiveModal 
         value={values.email || ""}
         required
       ></input>
-      <label className="modal__form-input-title" htmlFor="password">
+      <label className="modal__form-title" htmlFor="password">
         Password
       </label>
       <input

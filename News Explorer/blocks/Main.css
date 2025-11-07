@@ -1,6 +1,6 @@
 .main-page__image-wrapper {
   position: relative;
-  height: 50vh;
+  height: 576px;
   overflow: hidden;
   z-index: 1;
   display: flex;
@@ -15,7 +15,7 @@
   display: block;
 }
 
-.text-wrapper {
+.main-page__text-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,25 +27,29 @@
   height: 100%;
   color: #ffffff;
   z-index: 2;
-  padding-top: 45px;
+  margin-top: 80px;
 }
 
-.main-page__seach-title {
+.main-page__search-title {
   font-family: "Roboto Slab";
   font-weight: 400;
   font-size: 60px;
   line-height: 64px;
-  letter-spacing: 0px;
+  letter-spacing: 4.5px;
   margin: 0;
   padding-bottom: 32px;
+  height: 128px;
+  width: 608px;
 }
 
-.main-page__seach-sub-title {
+.main-page__search-subtitle {
   margin: 0;
   font-family: "Roboto";
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
+  letter-spacing: 0;
+  
 }
 
 .main-page__search-bar-wrapper {
@@ -59,6 +63,7 @@
   min-width: 608px;
   min-height: 64px;
   border: none;
+  margin-bottom: 80px;
 }
 
 .main-page__search-button {
@@ -93,13 +98,57 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
+@media (max-width: 768px) {
+  .main-page__search-title{
+    width: 385px;
+    height: 80px;
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: 0;
+    padding-bottom: 0;
+    margin-top: 104px;
+    margin-bottom: 16px;
+    margin-right: 63px;
+  }
+  .main-page__search-subtitle{
+    max-width: 452px;
+    max-height: 48px;
+    
+    
+  }
+
+  .main-page__text-wrapper{
+    margin-top:0;
+    height: auto;
+
+  }
+
+
+  .main-page__image-wrapper {
+  height: 400px;
+  
+}
+.main-page__search-bar-wrapper{
+  margin-top: 48px;
+  margin-bottom: 0;
+  
+}
+.main-page__search-bar{
+  min-width: 452px;
+  min-height: 56px;
+}
+.main-page__search-button{
+  width: 160px;
+  height: 56px;
+}
+}
 
 @media (max-width: 650px) {
   .main-page__image-wrapper {
     height: 65vh;
   }
 
-  .text-wrapper {
+  .main-page__text-wrapper {
     padding: 16px;
     width: 100%; /* full width */
     max-width: 100%; /* prevent overflow */
@@ -107,16 +156,16 @@
     box-sizing: border-box;
   }
 
-  .main-page__seach-title {
+  .main-page__search-title {
     font-family: "Roboto Slab";
     font-weight: 400;
     font-size: 32px;
     line-height: 36px;
     margin-bottom: 12px;
-    align-self: flex-start;
+    align-self:center;
   }
 
-  .main-page__seach-sub-title {
+  .main-page__search-subtitle {
     font-family: "Roboto";
     font-weight: 400;
     font-size: 16px;
@@ -148,5 +197,51 @@
     height: 48px;
     border-radius: 100px;
     position: static;
+  }
+}
+
+@media (max-width: 400px) {
+  .main-page__text-wrapper{
+    padding-top: 86px;
+  }
+  .main-page__search-title{
+    width: 285px;
+    height: 80px;
+    margin-right:0;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 16px;
+    align-self: flex-start;
+    font-size: 36px;
+    line-height: 40px;
+  }
+  .main-page__search-subtitle {
+    
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 122px;
+    max-width: 288px;
+    max-height: 72px;
+  }
+  .main-page__search-bar{
+width: 288px;
+height: 56px;
+padding: 0;
+  }
+
+  .main-page__search-bar-wrapper{
+    gap:16px;
+  }
+
+  .main-page__search-button {
+    padding: 0;
+    width: 288px;
+    height: 56px;
+    margin:0;
+  }
+
+  .main-page__image-wrapper {
+    height: 536px;
+
   }
 }

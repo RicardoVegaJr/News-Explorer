@@ -1,8 +1,19 @@
 import MainWallpaper from "../assets/HomeWallpaper.jpg";
 import "../../blocks/Main.css";
 import { useState } from "react";
+import SearchResults from "./SearchResults";
+import About from "./About";
 
-function Main({ handleSearch }) {
+function Main({
+  handleSearch,
+  setSearchKeyword,
+  savedArticles,
+  handleSavedArticle,
+  handleRemoveArticle,
+  isLoading,
+  articles,
+  searchInitiated,
+}) {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSubmit = (e) => {
@@ -22,12 +33,12 @@ function Main({ handleSearch }) {
           className="main-page__image"
           alt="Main Wallpaper"
         />
-        <div className="text-wrapper">
-          <h1 className="main-page__seach-title">
-            What&apos;s going on in <br />
+        <div className="main-page__text-wrapper">
+          <h1 className="main-page__search-title">
+            What&apos;s going on in 
             the world?
           </h1>
-          <h2 className="main-page__seach-sub-title">
+          <h2 className="main-page__search-subtitle">
             Find the latest news on any topic and save them in your personal
             account.
           </h2>
@@ -46,6 +57,18 @@ function Main({ handleSearch }) {
           </form>
         </div>
       </div>
+      {searchInitiated && location.pathname !== "/savedarticles" && (
+        <SearchResults
+          searchQuery={searchQuery}
+          setSearchKeyword={setSearchKeyword}
+          savedArticles={savedArticles}
+          handleSavedArticle={handleSavedArticle}
+          handleRemoveArticle={handleRemoveArticle}
+          isLoading={isLoading}
+          articles={articles}
+        />
+      )}
+      <About />
     </main>
   );
 }

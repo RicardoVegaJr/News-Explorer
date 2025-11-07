@@ -49,6 +49,12 @@ if (location.pathname === "/"){
       {!isLoggedIn && (
       <button  className="card__bookmark-disclaimer" >Sign in to save articles</button>
       )}
+      <a
+      href={article.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="card__link"
+      >
       <img className="card__image" src={article.urlToImage || NewsCardImage}  alt="" />
       <div className="card__text-wrapper">
       <p className="card__date"> {article.publishedAt}</p>
@@ -56,6 +62,7 @@ if (location.pathname === "/"){
        <p className="card__text">{article.content ? `${article.content.slice(0, 100)}...` : ""}</p>
       <h2 className="card__source">{article.source.name}</h2>
       </div>
+      </a>
     </div>
   );
 }

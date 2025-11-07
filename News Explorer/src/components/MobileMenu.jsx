@@ -27,16 +27,16 @@ function MobileMenu({
   return (
     <div className="mobile__container">
       <div className="mobile__menu">
-        <button type="button" onClick={onClose} className="mobile__modal__close" />
+        <button type="button" onClick={onClose} className="mobile__close" />
         <div className="mobile__menu-divider">
           <h1 className="mobile__title">NewsExplorer</h1>
         </div>
-        <ul className="mobile__menu_list">
+        <ul className="mobile__menu-list">
           <li onClick={handleHomeClick} className="mobile__menu-item">
             Home
           </li>
           {isLoggedIn && (
-            <li onClick={handleSavedArticlesClick}> Save articles</li>
+            <li className="mobile__menu-item" onClick={handleSavedArticlesClick}> Saved articles</li>
           )}
         </ul>
         {!isLoggedIn && (
