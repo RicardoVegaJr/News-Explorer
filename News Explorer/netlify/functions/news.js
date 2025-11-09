@@ -1,4 +1,6 @@
-export async function handler(event, context) {
+/* eslint-env node */
+
+export async function handler(event) {
   if (event.httpMethod === "OPTIONS") {
     return {
       statusCode: 200,
@@ -16,7 +18,9 @@ export async function handler(event, context) {
 
   try {
     const response = await fetch(
-      `https://newsapi.org/v2/everything?q=${encodeURIComponent(q)}&apiKey=${API_KEY}`
+      `https://newsapi.org/v2/everything?q=${encodeURIComponent(
+        q
+      )}&apiKey=${API_KEY}`
     );
 
     if (!response.ok) {
@@ -25,7 +29,9 @@ export async function handler(event, context) {
         headers: {
           "Access-Control-Allow-Origin": "*",
         },
-        body: JSON.stringify({ error: `News API error: ${response.statusText}` }),
+        body: JSON.stringify({
+          error: `News API error: ${response.statusText}`,
+        }),
       };
     }
 

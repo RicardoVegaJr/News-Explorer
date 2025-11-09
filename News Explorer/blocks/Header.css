@@ -56,7 +56,6 @@
   margin-bottom: 0;
   margin-right: 42px;
   padding-bottom: 23px;
-  
 }
 
 .header__home-button--black {
@@ -214,25 +213,22 @@
   }
 
   .header__title {
-    margin-left:0;
+    margin-left: 0;
     margin-top: 22.73px;
-    
   }
 
   .header__title.header__title--signed-in {
     margin-right: 132px;
   }
 
- 
   .header__title.header__title--signed-out {
     margin-right: 256px;
   }
 
-   .header__home-button.header__home--signed-in {
+  .header__home-button.header__home--signed-in {
     margin-right: 0;
   }
 
- 
   .header__home-button.header__home--signed-out {
     margin-right: 16px;
   }
@@ -243,50 +239,45 @@
     margin-left: 40px;
     margin-right: 0;
     margin-top: 0;
-    
   }
 
   .header__home-button {
-  font-size: 16px;
-  margin-top:22px;
-  margin-right:0;
-  width: 64px;
-  height: 24px;
-  text-align-last:center;
-  padding-bottom:19px
-  
-}
-.header__signin-button{
-  margin-top:14px;
-  width: 152px;
-  height: 40px;
-  font-size: 16px;
-}
+    font-size: 16px;
+    margin-top: 22px;
+    margin-right: 0;
+    width: 64px;
+    height: 24px;
+    text-align-last: center;
+    padding-bottom: 19px;
+  }
+  .header__signin-button {
+    margin-top: 14px;
+    width: 152px;
+    height: 40px;
+    font-size: 16px;
+  }
 
+  .header__saved-articles {
+    width: 160px;
+    height: 24px;
+    margin-top: 22.73px;
+    margin-left: 16px;
+    margin-right: 6px;
+    font-size: 16px;
+    margin-right: 16px;
+  }
 
-.header__saved-articles{
-  width: 160px;
-  height: 24px;
-  margin-top: 22.73px;
-  margin-left: 16px;
-  margin-right: 6px;
-  font-size: 16px;
-  margin-right: 16px;
-}
-
-.header__profile-button {
-  font-size: 16px;
-  width: 100px;
-  height: 40px;
-  gap: 13px;
-  margin-top: 14px;
-  margin-right: 16px;
-}
-
+  .header__profile-button {
+    font-size: 16px;
+    width: 100px;
+    height: 40px;
+    gap: 13px;
+    margin-top: 14px;
+    margin-right: 16px;
+  }
 }
 
 @media (max-width: 650px) {
-  
   .header__title {
     font-family: "Roboto Slab";
     font-weight: 700;
@@ -341,22 +332,20 @@
     min-width: 300px;
     max-height: 56px;
   }
-    .header__title.header__title--signed-in {
-    margin:0;
+  .header__title.header__title--signed-in {
+    margin: 0;
   }
 
- 
   .header__title.header__title--signed-out {
-    margin:0;
+    margin: 0;
   }
 
-   .header__home-button.header__home--signed-in {
-    margin:0;
+  .header__home-button.header__home--signed-in {
+    margin: 0;
   }
 
- 
   .header__home-button.header__home--signed-out {
-    margin:0;
+    margin: 0;
   }
 }
 
@@ -366,9 +355,6 @@
   }
 
   .header__container {
-    margin:0;
-    
+    margin: 0;
   }
-  
-  
 }

@@ -29,7 +29,7 @@
   margin: 0 0 12px 0;
 }
 
-.card__title { 
+.card__title {
   font-family: "Roboto Slab";
   font-weight: 400;
   font-size: 26px;
@@ -38,9 +38,9 @@
   margin: 0 0 46px 0;
 }
 
-.card__link{
+.card__link {
   text-decoration: none;
-  color: #1A1B22;
+  color: #1a1b22;
 }
 
 .card__text {
@@ -91,6 +91,39 @@
   top: 24px;
   right: 24px;
   cursor: pointer;
+}
+.card__bookmark-icon {
+  display: inline-block;
+  width: 24px;                  
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: background-image 0.15s ease, filter 0.15s ease;
+}
+
+.card__bookmark.is-empty .card__bookmark-icon {
+  background-image: url("../src/assets/NoBookmark.svg");
+}
+
+.card__bookmark.is-bookmarked .card__bookmark-icon {
+  background-image: url("../src/assets/Bookmarked.svg");
+}
+
+
+.card__bookmark.is-empty:hover .card__bookmark-icon {
+  background-image: url("../src/assets/bookmarkHover.svg");
+}
+
+.card__bookmark.is-bookmarked:hover .card__bookmark-icon {
+  background-image: url("../src/assets/Bookmarked.svg");
+}
+
+.card__bookmark.on-saved .card__bookmark-icon {
+  background-image: url("../src/assets/trashIconGray.svg");
+}
+.card__bookmark.on-saved:hover .card__bookmark-icon {
+  background-image: url("../src/assets/trashIconBlack.svg");
 }
 
 .card__bookmark-disclaimer {

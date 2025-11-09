@@ -20,12 +20,12 @@ function Header({
   const [style, setStyle] = useState(false);
 
   const headerTitleMarginClass = isLoggedIn
-    ? "header__title--signed-in" 
-    : "header__title--signed-out"; 
+    ? "header__title--signed-in"
+    : "header__title--signed-out";
 
-    const headerHomeMarginClass = isLoggedIn
-    ? "header__home--signed-in" 
-    : "header__home--signed-out"; 
+  const headerHomeMarginClass = isLoggedIn
+    ? "header__home--signed-in"
+    : "header__home--signed-out";
 
   useEffect(() => {
     if (location.pathname === "/savedarticles") {

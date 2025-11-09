@@ -49,7 +49,6 @@
   font-size: 18px;
   line-height: 24px;
   letter-spacing: 0;
-  
 }
 
 .main-page__search-bar-wrapper {
@@ -86,6 +85,15 @@
   top: 1px;
   padding: 0;
   margin: 0;
+  transition: background-color 0.2s ease;
+}
+
+.main-page__search-button:hover {
+  background-color: #347eff;
+}
+
+.main-page__search-button:active {
+  background-color: #2A65CC;
 }
 
 .main-page__image-wrapper::before {
@@ -99,7 +107,7 @@
   z-index: 1;
 }
 @media (max-width: 768px) {
-  .main-page__search-title{
+  .main-page__search-title {
     width: 385px;
     height: 80px;
     font-size: 36px;
@@ -110,37 +118,31 @@
     margin-bottom: 16px;
     margin-right: 63px;
   }
-  .main-page__search-subtitle{
+  .main-page__search-subtitle {
     max-width: 452px;
     max-height: 48px;
-    
-    
   }
 
-  .main-page__text-wrapper{
-    margin-top:0;
+  .main-page__text-wrapper {
+    margin-top: 0;
     height: auto;
-
   }
-
 
   .main-page__image-wrapper {
-  height: 400px;
-  
-}
-.main-page__search-bar-wrapper{
-  margin-top: 48px;
-  margin-bottom: 0;
-  
-}
-.main-page__search-bar{
-  min-width: 452px;
-  min-height: 56px;
-}
-.main-page__search-button{
-  width: 160px;
-  height: 56px;
-}
+    height: 400px;
+  }
+  .main-page__search-bar-wrapper {
+    margin-top: 48px;
+    margin-bottom: 0;
+  }
+  .main-page__search-bar {
+    min-width: 452px;
+    min-height: 56px;
+  }
+  .main-page__search-button {
+    width: 160px;
+    height: 56px;
+  }
 }
 
 @media (max-width: 650px) {
@@ -162,7 +164,7 @@
     font-size: 32px;
     line-height: 36px;
     margin-bottom: 12px;
-    align-self:center;
+    align-self: center;
   }
 
   .main-page__search-subtitle {
@@ -201,13 +203,13 @@
 }
 
 @media (max-width: 400px) {
-  .main-page__text-wrapper{
+  .main-page__text-wrapper {
     padding-top: 86px;
   }
-  .main-page__search-title{
+  .main-page__search-title {
     width: 285px;
     height: 80px;
-    margin-right:0;
+    margin-right: 0;
     margin-left: 0;
     margin-top: 0;
     margin-bottom: 16px;
@@ -216,32 +218,30 @@
     line-height: 40px;
   }
   .main-page__search-subtitle {
-    
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 122px;
     max-width: 288px;
     max-height: 72px;
   }
-  .main-page__search-bar{
-width: 288px;
-height: 56px;
-padding: 0;
+  .main-page__search-bar {
+    width: 288px;
+    height: 56px;
+    padding: 0;
   }
 
-  .main-page__search-bar-wrapper{
-    gap:16px;
+  .main-page__search-bar-wrapper {
+    gap: 16px;
   }
 
   .main-page__search-button {
     padding: 0;
     width: 288px;
     height: 56px;
-    margin:0;
+    margin: 0;
   }
 
   .main-page__image-wrapper {
     height: 536px;
-
   }
 }

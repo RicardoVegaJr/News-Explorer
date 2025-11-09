@@ -1,17 +1,24 @@
 import ModalWithForm from "./ModalWithForm";
 import { useFormAndValidation } from "./FormValidator";
 
-const LoginModal = ({ handleLogin, onClose, isOpen, activeModal, setActiveModal }) => {
-  const { values, errors, isValid, handleChange, resetForm } = useFormAndValidation({
-    email: "",
-    password: "",
-  });
+const LoginModal = ({
+  handleLogin,
+  onClose,
+  isOpen,
+  activeModal,
+  setActiveModal,
+}) => {
+  const { values, errors, isValid, handleChange, resetForm } =
+    useFormAndValidation({
+      email: "",
+      password: "",
+    });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!isValid) return;
     handleLogin(values);
-    resetForm(); 
+    resetForm();
   };
 
   return (
@@ -24,6 +31,7 @@ const LoginModal = ({ handleLogin, onClose, isOpen, activeModal, setActiveModal 
       isLoginModal={true}
       activeModal={activeModal}
       setActiveModal={setActiveModal}
+      isValid={isValid}
     >
       <label className="modal__form-title" htmlFor="email">
         Email
@@ -52,8 +60,12 @@ const LoginModal = ({ handleLogin, onClose, isOpen, activeModal, setActiveModal 
         minLength="6"
         required
       ></input>
-      {errors.email && <span className="modal__form-error">{errors.email}</span>}
-      {errors.password && <span className="modal__form-error">{errors.password}</span>}
+      {errors.email && (
+        <span className="modal__form-error">{errors.email}</span>
+      )}
+      {errors.password && (
+        <span className="modal__form-error">{errors.password}</span>
+      )}
     </ModalWithForm>
   );
 };

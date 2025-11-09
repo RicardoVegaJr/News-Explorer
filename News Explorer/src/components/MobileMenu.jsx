@@ -8,7 +8,7 @@ function MobileMenu({
   closeActiveModal,
   handleSigninClick,
   toggleAboutInfo,
-  handleLogout
+  handleLogout,
 }) {
   const navigate = useNavigate();
 
@@ -16,7 +16,7 @@ function MobileMenu({
     navigate("/");
     closeActiveModal();
   };
-  const {isLoggedIn } = useContext(CurrentUserContext);
+  const { isLoggedIn } = useContext(CurrentUserContext);
 
   const handleSavedArticlesClick = () => {
     navigate("/savedarticles");
@@ -36,7 +36,13 @@ function MobileMenu({
             Home
           </li>
           {isLoggedIn && (
-            <li className="mobile__menu-item" onClick={handleSavedArticlesClick}> Saved articles</li>
+            <li
+              className="mobile__menu-item"
+              onClick={handleSavedArticlesClick}
+            >
+              {" "}
+              Saved articles
+            </li>
           )}
         </ul>
         {!isLoggedIn && (

@@ -35,8 +35,7 @@ function Main({
         />
         <div className="main-page__text-wrapper">
           <h1 className="main-page__search-title">
-            What&apos;s going on in 
-            the world?
+            What&apos;s going on in the world?
           </h1>
           <h2 className="main-page__search-subtitle">
             Find the latest news on any topic and save them in your personal
