@@ -72,11 +72,7 @@
   padding-bottom: 21px;
 }
 
-.header__home-button--black:hover {
-  border-bottom: 2px solid #1a1b22;
-}
-
-.header__home-button:hover {
+.header__home-button.is-active {
   color: #ffffff;
   border-bottom: 2px solid #ffffff;
 }
@@ -147,16 +143,12 @@
   vertical-align: middle;
   margin-top: 30px;
   margin-bottom: 0;
-  padding-bottom: 19px;
+  padding-bottom: 24px;
 }
 
-.header__saved-articles--black:hover {
+.header__saved-articles.is-active--black {
+  color: #1a1b22;
   border-bottom: 2px solid #1a1b22;
-}
-
-.header__saved-articles:hover {
-  color: #ffffff;
-  border-bottom: 2px solid #ffffff;
 }
 
 .header__profile-button {

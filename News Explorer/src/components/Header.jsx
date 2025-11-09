@@ -19,6 +19,13 @@ function Header({
   const location = useLocation();
   const [style, setStyle] = useState(false);
 
+  const onSavedPage = location.pathname === "/savedarticles";
+  const onHomePage = location.pathname === "/";
+
+  useEffect(() => {
+    setStyle(onSavedPage);
+  }, [onSavedPage]);
+
   const headerTitleMarginClass = isLoggedIn
     ? "header__title--signed-in"
     : "header__title--signed-out";
@@ -63,9 +70,9 @@ function Header({
         <div className="header__nav">
           <p
             onClick={handleHomeClick}
-            className={`header__home-button ${
-              style ? "header__home-button--black" : ""
-            } ${headerHomeMarginClass}`}
+            className={`header__home-button ${style ? "header__home-button--black" : ""} ${headerHomeMarginClass} ${
+              onHomePage ? (style ? "is-active--black" : "is-active") : ""
+            }`}
           >
             Home
           </p>
@@ -81,8 +88,8 @@ function Header({
             <>
               <p
                 onClick={handleSavedArticlesClick}
-                className={`header__saved-articles ${
-                  style ? "header__saved-articles--black" : ""
+                className={`header__saved-articles ${style ? "header__saved-articles--black" : ""} ${
+                  onSavedPage ? (style ? "is-active--black" : "is-active") : ""
                 }`}
               >
                 Saved articles
