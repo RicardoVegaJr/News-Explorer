@@ -1,6 +1,5 @@
 import MainWallpaper from "../assets/HomeWallpaper.jpg";
 import "../../blocks/Main.css";
-import { useState } from "react";
 import SearchResults from "./SearchResults";
 import About from "./About";
 
@@ -13,16 +12,15 @@ function Main({
   isLoading,
   articles,
   searchInitiated,
+  searchQuery,
 }) {
-  const [searchQuery, setSearchQuery] = useState("");
-
   const handleSubmit = (e) => {
     e.preventDefault();
     handleSearch({ searchQuery });
   };
 
   const handleChange = (e) => {
-    setSearchQuery(e.target.value);
+    setSearchKeyword(e.target.value);
   };
 
   return (

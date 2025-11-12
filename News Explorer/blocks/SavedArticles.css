@@ -1,4 +1,4 @@
-.saved-articles__container {
+.saved-articles {
   height: 100%;
   background-color: white;
   display: flex;
@@ -11,7 +11,7 @@
   margin-top: 120px;
   margin-left: 104px;
   margin-right: 0;
-  margin-bottom: 38px;
+  margin-bottom: 0;
 }
 
 .saved-articles__title {
@@ -58,6 +58,7 @@
 .saved-articles__content {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
   background-color: #f5f6f7;
   padding-top: 62px;
@@ -65,7 +66,6 @@
   padding-left: 102px;
   padding-right: 106px;
   max-height: 100%;
-
   max-width: 1440px;
 }
 

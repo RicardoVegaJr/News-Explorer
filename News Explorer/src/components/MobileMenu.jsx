@@ -25,19 +25,19 @@ function MobileMenu({
   };
 
   return (
-    <div className="mobile__container">
+    <section className="mobile">
       <div className="mobile__menu">
         <button type="button" onClick={onClose} className="mobile__close" />
-        <div className="mobile__menu-divider">
+        <div className="mobile__divider">
           <h1 className="mobile__title">NewsExplorer</h1>
         </div>
-        <ul className="mobile__menu-list">
-          <li onClick={handleHomeClick} className="mobile__menu-item">
+        <ul className="mobile__list">
+          <li onClick={handleHomeClick} className="mobile__item">
             Home
           </li>
           {isLoggedIn && (
             <li
-              className="mobile__menu-item"
+              className="mobile__item"
               onClick={handleSavedArticlesClick}
             >
               {" "}
@@ -46,17 +46,17 @@ function MobileMenu({
           )}
         </ul>
         {!isLoggedIn && (
-          <button onClick={handleSigninClick} className="mobile__signin">
+          <button onClick={handleSigninClick} className="mobile__button">
             Sign in
           </button>
         )}
         {isLoggedIn && (
-          <button onClick={handleLogout} className="mobile__signin">
+          <button onClick={handleLogout} className="mobile__button">
             Sign out
           </button>
         )}
       </div>
-    </div>
+    </section>
   );
 }
 export default MobileMenu;

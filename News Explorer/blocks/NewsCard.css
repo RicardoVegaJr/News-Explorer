@@ -1,4 +1,4 @@
-.card__container {
+.card {
   display: flex;
   flex-direction: column;
   width: 400px;
@@ -94,7 +94,7 @@
 }
 .card__bookmark-icon {
   display: inline-block;
-  width: 24px;                  
+  width: 24px;
   height: 24px;
   background-repeat: no-repeat;
   background-position: center;
@@ -109,7 +109,6 @@
 .card__bookmark.is-bookmarked .card__bookmark-icon {
   background-image: url("../src/assets/Bookmarked.svg");
 }
-
 
 .card__bookmark.is-empty:hover .card__bookmark-icon {
   background-image: url("../src/assets/bookmarkHover.svg");
@@ -126,34 +125,48 @@
   background-image: url("../src/assets/trashIconBlack.svg");
 }
 
-.card__bookmark-disclaimer {
-  width: 182px;
-  height: 40px;
+.card__subtext {
   border-radius: 10px;
   border: none;
   background-color: #ffffff;
-  display: none;
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 24px;
-  right: 69px;
   cursor: pointer;
   font-family: "Roboto";
   font-weight: 500;
-  font-size: 12px;
-  line-height: 100%;
   letter-spacing: 0%;
   text-align: center;
   vertical-align: middle;
+}
+
+.card__bookmark-disclaimer {
+  display: none;
+  top: 24px;
+  right: 69px;
+  font-size: 12px;
+  line-height: 100%;
+  width: 182px;
+  height: 40px;
 }
 
 .card__bookmark:hover + .card__bookmark-disclaimer {
   display: flex;
 }
 
+.card__search-text {
+  display: flex;
+  max-width: fit-content;
+  width: 182px;
+  height: 40px;
+  top: 24px;
+  left: 24px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
 @media (max-width: 768px) {
-  .card__container {
+  .card {
     width: 224px;
     height: 420px;
   }
@@ -197,10 +210,14 @@
     top: 8px;
     right: 53px;
   }
+  .card__search-text {
+    top: 8px;
+    left: 8px;
+  }
 }
 
 @media (max-width: 650px) {
-  .card__container {
+  .card {
     max-width: 288px;
     max-height: 440px;
   }
@@ -234,7 +251,7 @@
   }
 }
 @media (max-width: 320px) {
-  .card__container {
+  .card {
     width: 288px;
     height: 440px;
   }
@@ -259,5 +276,9 @@
   .card__bookmark-disclaimer {
     top: 17px;
     right: 59px;
+  }
+  .card__search-text {
+    top: 16px;
+    left: 16px;
   }
 }

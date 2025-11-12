@@ -19,10 +19,10 @@ function SearchResults({
   };
 
   return (
-    <div className="search__results-container">
+    <section className="search-results">
       {isLoading && <Preloader></Preloader>}
-      {!isLoading && <h1 className="search__results-title">Search results</h1>}
-      <div className="search__results">
+      {!isLoading && <h1 className="search-results__title">Search results</h1>}
+      <div className="search-results__list">
         {articles.slice(0, visibleCount).map((article) => (
           <NewsCard
             key={article.url}
@@ -32,20 +32,21 @@ function SearchResults({
             handleRemoveArticle={handleRemoveArticle}
             setSearchKeyword={setSearchKeyword}
             searchQuery={searchQuery}
+            keyword={searchQuery}
           />
         ))}
       </div>
-      <div className="search__results-more-button-wrapper">
+      <div className="search-results__more">
         {!isLoading && (
           <button
             onClick={generateMoreCards}
-            className="search__results-more-button"
+            className="search-results__more-button"
           >
             Show more
           </button>
         )}
       </div>
-    </div>
+    </section>
   );
 }
 

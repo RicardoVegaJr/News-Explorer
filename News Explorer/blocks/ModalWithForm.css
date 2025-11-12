@@ -103,7 +103,7 @@
   margin-bottom: 0;
 }
 
-.modal__form_submit-button {
+.modal__submit-button {
   font-family: "Roboto";
   font-weight: 500;
   font-size: 18px;
@@ -120,7 +120,7 @@
   cursor: pointer;
 }
 
-.modal__form_submit-button--disabled {
+.modal__submit-button--disabled {
   background-color: #e6e8eb;
   color: #a0a4ab;
   cursor: not-allowed;
@@ -133,7 +133,7 @@
   background-color: #e6e8eb;
 }
 
-.modal__form_login {
+.modal__form-login {
   font-family: "Inter";
   font-style: Bold;
   color: #2f71e5;

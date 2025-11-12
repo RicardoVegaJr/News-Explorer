@@ -11,12 +11,12 @@ function ModalWithForm({
   setActiveModal,
   isValid
 }) {
-  const submitClass = `modal__form_submit-button ${
-    isValid ? "" : "modal__form_submit-button--disabled"
+  const submitClass = `modal__submit-button ${
+    isValid ? "" : "modal__submit-button--disabled"
   }`;
 
   return (
-    <div className={`modal ${isOpen ? "modal--opened" : ""}`}>
+    <section className={`modal ${isOpen ? "modal--opened" : ""}`}>
       <div className="modal__container">
         <button type="button" onClick={onClose} className="modal__close" />
         <form onSubmit={onSubmit} action="" className="modal__form">
@@ -29,7 +29,7 @@ function ModalWithForm({
             {activeModal === "signinModal" && (
               <button
                 onClick={() => setActiveModal("signupModal")}
-                className="modal__form_login"
+                className="modal__form-login"
               >
                 {" "}
                 or Sign up
@@ -38,7 +38,7 @@ function ModalWithForm({
             {activeModal === "signupModal" && (
               <button
                 onClick={() => setActiveModal("signinModal")}
-                className="modal__form_login"
+                className="modal__form-login"
               >
                 {" "}
                 or Sign in
@@ -47,7 +47,7 @@ function ModalWithForm({
           </div>
         </form>
       </div>
-    </div>
+    </section>
   );
 }
 

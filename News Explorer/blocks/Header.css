@@ -170,6 +170,7 @@
   border: 1px solid rgba(255, 255, 255, 1);
   color: #ffffff;
   margin-top: 19px;
+  cursor: pointer;
 }
 
 .header__profile-button--black {
@@ -190,12 +191,12 @@
   gap: 12px;
   border: 1px solid black;
   color: black;
+  cursor: pointer;
 }
 
 .header__profile-button-icon {
   width: 24px;
   height: 24px;
-  cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -208,6 +209,10 @@
     margin-left: 0;
     margin-top: 22.73px;
   }
+
+  .header__saved-articles.is-active--black {
+  padding-bottom: 17px;
+}
 
   .header__title.header__title--signed-in {
     margin-right: 132px;
@@ -269,7 +274,7 @@
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 672px) {
   .header__title {
     font-family: "Roboto Slab";
     font-weight: 700;

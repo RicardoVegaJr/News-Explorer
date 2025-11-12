@@ -11,7 +11,7 @@ function NewsCard({
   savedArticles = [],
   handleSavedArticle,
   handleRemoveArticle,
-  searchQuery,
+  keyword,
 }) {
   const { isLoggedIn } = useContext(CurrentUserContext);
   const [isBookmarked, setIsBookmarked] = useState(false);
@@ -35,13 +35,13 @@ function NewsCard({
       handleRemoveArticle(article);
       setIsBookmarked(false);
     } else {
-      handleSavedArticle(article, searchQuery);
+      handleSavedArticle(article, keyword);
       setIsBookmarked(true);
     }
   };
 
   return (
-    <div className="card__container">
+    <section className="card">
       <div className="card__keyword"></div>
       <button
         disabled={!isLoggedIn}
@@ -54,8 +54,13 @@ function NewsCard({
         <span className="card__bookmark-icon" />
       </button>
       {!isLoggedIn && (
-        <button className="card__bookmark-disclaimer">
+        <button className="card__subtext card__bookmark-disclaimer">
           Sign in to save articles
+        </button>
+      )}
+      {onSavedPage &&(
+        <button className="card__subtext card__search-text">
+          {keyword}
         </button>
       )}
       <a
@@ -67,7 +72,7 @@ function NewsCard({
         <img
           className="card__image"
           src={article.urlToImage || NewsCardImage}
-          alt=""
+          alt="News card image"
         />
         <div className="card__text-wrapper">
           <p className="card__date"> {article.publishedAt}</p>
@@ -80,7 +85,7 @@ function NewsCard({
           <h2 className="card__source">{article.source.name}</h2>
         </div>
       </a>
-    </div>
+    </section>
   );
 }
 

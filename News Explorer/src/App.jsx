@@ -22,7 +22,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({
     name: "",
   });
-  const [searchQuery, setSearchKeyword] = useState([]);
+  const [searchQuery, setSearchKeyword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [aboutInfo, toggleAboutinfo] = useState(false);
   const [savedArticles, setSavedArticles] = useState(() => {
@@ -46,8 +46,6 @@ function App() {
       return updated;
     });
   };
-
-  localStorage.clear();
 
   const handleSearch = async ({ searchQuery }) => {
     setIsLoading(true);

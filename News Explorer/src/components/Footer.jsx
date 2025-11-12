@@ -35,14 +35,14 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={GitIcon} className="footer__icon-button"></img>
+            <img src={GitIcon} className="footer__icon" alt="GitHub Icon"></img>
           </a>
           <a
             href="https://tripleten.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={FBIcon} className="footer__icon-button"></img>
+            <img src={FBIcon} className="footer__icon" alt="Facebook Icon"></img>
           </a>
         </div>
       </div>

@@ -67,7 +67,7 @@ function Header({
         <h1 className={`header__title ${headerTitleMarginClass}`}>
           NewsExplorer
         </h1>
-        <div className="header__nav">
+        <nav className="header__nav">
           <p
             onClick={handleHomeClick}
             className={`header__home-button ${style ? "header__home-button--black" : ""} ${headerHomeMarginClass} ${
@@ -98,17 +98,18 @@ function Header({
                 className={`header__profile-button ${
                   style ? "header__profile-button--black" : ""
                 }`}
+                onClick={handleLogout}
               >
                 {currentUser.name}
                 <img
                   className="header__profile-button-icon"
                   src={style ? ProfileIconBlack : ProfileIcon}
-                  onClick={handleLogout}
+                  alt="Profile button"
                 ></img>
               </button>
             </>
           )}
-        </div>
+        </nav>
       </div>
     </header>
   );

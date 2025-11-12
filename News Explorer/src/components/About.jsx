@@ -3,17 +3,17 @@ import "../../blocks/About.css";
 
 function About() {
   return (
-    <div className="about-container">
+    <section className="about">
       <img
         src={AboutImage}
-        className="about-container__image"
-        alt="About Image"
+        className="about__image"
+        alt="Author Image"
       />
-      <div className="about-container__text">
-        <h1 className="about-container__description-header">
+      <div className="about__text">
+        <h1 className="about__description">
           About the author
         </h1>
-        <p className="about-container__description">
+        <p className="about__description-text">
           I am a multilingual full-stack developer with a strong background in
           Information Technology. I build robust web applications using
           JavaScript, React, Node.js, and MongoDB. My projects showcase my
@@ -22,7 +22,7 @@ function About() {
           problems and lead others.
         </p>
       </div>
-    </div>
+    </section>
   );
 }
 export default About;
