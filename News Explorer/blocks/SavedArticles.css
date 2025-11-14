@@ -59,7 +59,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-self: anchor-center;
   gap: 16px;
   background-color: #f5f6f7;
   padding-top: 62px;
@@ -68,6 +67,7 @@
   padding-right: 106px;
   max-height: 100%;
   max-width: 100%;
+  align-self: auto;
 }
 
 @media (max-width: 768px) {
