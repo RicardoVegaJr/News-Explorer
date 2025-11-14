@@ -217,14 +217,9 @@
 }
 
 @media (max-width: 650px) {
-  .card {
-    max-width: 288px;
-    max-height: 440px;
-  }
-
   .card__image {
-    min-width: 288px;
-    min-height: 196px;
+    width: 288px;
+    height: 196px;
   }
   .card__text {
     margin-bottom: 8px;
@@ -257,9 +252,10 @@
   }
 
   .card__image {
-    width: 288px;
-    height: 196px;
+    min-width: 288px;
+    min-height: 196px;
   }
+
   .card__title {
     font-size: 22px;
     width: 256px;

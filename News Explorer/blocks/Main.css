@@ -93,7 +93,7 @@
 }
 
 .main-page__search-button:active {
-  background-color: #2A65CC;
+  background-color: #2a65cc;
 }
 
 .main-page__image-wrapper::before {
@@ -202,6 +202,12 @@
   }
 }
 
+@media (max-width: 480px) {
+  .main-page__search-title {
+    margin-right: 0;
+  }
+}
+
 @media (max-width: 400px) {
   .main-page__text-wrapper {
     padding-top: 86px;
@@ -209,7 +215,6 @@
   .main-page__search-title {
     width: 285px;
     height: 80px;
-    margin-right: 0;
     margin-left: 0;
     margin-top: 0;
     margin-bottom: 16px;

@@ -59,6 +59,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-self: anchor-center;
   gap: 16px;
   background-color: #f5f6f7;
   padding-top: 62px;
@@ -66,7 +67,7 @@
   padding-left: 102px;
   padding-right: 106px;
   max-height: 100%;
-  max-width: 1440px;
+  max-width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -111,7 +112,6 @@
 
   .saved-articles__content {
     padding: 24px 16px 12px 16px;
-    width: min-content;
     gap: 10px;
   }
   .saved-articles__header {

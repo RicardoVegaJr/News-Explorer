@@ -112,7 +112,6 @@
   }
 }
 
-
 @media (max-width: 690px) {
   .about {
     flex-direction: column;
@@ -124,6 +123,8 @@
   .about__image {
     min-width: 272px;
     min-height: 272px;
+    margin-top: 400px;
+    margin-bottom: 0;
   }
   .about__description {
     font-size: 30px;
@@ -140,6 +141,8 @@
 
 @media (max-width: 680px) {
   .about {
+    display: flex;
+    justify-self: center;
     width: 320px;
     max-height: 752px;
     padding: 0;

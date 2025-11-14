@@ -70,6 +70,12 @@
   }
 }
 
+@media (max-width: 690px) {
+  .footer {
+    margin-top: 400px;
+  }
+}
+
 @media (max-width: 650px) {
   .footer {
     max-width: 100%;
@@ -106,6 +112,7 @@
   .footer {
     max-height: 176px;
     background-color: #ffffff;
+    margin-top: 0;
   }
   .footer__nav {
     gap: 16px;

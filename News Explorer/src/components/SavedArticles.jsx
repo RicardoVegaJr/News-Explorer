@@ -6,19 +6,26 @@ import NewsCard from "./NewsCard";
 function SavedArticles({ savedArticles, handleRemoveArticle }) {
   const { currentUser } = useContext(CurrentUserContext);
 
-  const count = savedArticles.length;
+  const uniqueKeywords = [
+    ...new Map(
+      savedArticles
+        .map((a) => (a.keyword || "").trim())
+        .filter(Boolean)
+        .map((k) => [k.toLowerCase(), k])
+    ).values(),
+  ];
 
-  const keywordsLine = (() => {
-    if (count === 0) return "By keywords:";
-    if (count === 1) return `By keywords: ${savedArticles[0].keyword}`;
-    if (count === 2)
-      return `By keywords: ${savedArticles[0].keyword}, ${savedArticles[1].keyword}`;
-    // 3 or more
-    const others = count - 2;
-    return `By keywords: ${savedArticles[0].keyword}, ${
-      savedArticles[1].keyword
-    } and ${others} other${others > 1 ? "s" : ""}`;
-  })();
+  const k = uniqueKeywords.length;
+  const keywordsLine =
+    k === 0
+      ? "By keywords:"
+      : k === 1
+      ? `By keywords: ${uniqueKeywords[0]}`
+      : k === 2
+      ? `By keywords: ${uniqueKeywords[0]}, ${uniqueKeywords[1]}`
+      : `By keywords: ${uniqueKeywords[0]}, ${uniqueKeywords[1]} and ${
+          k - 2
+        } other${k - 2 > 1 ? "s" : ""}`;
 
   return (
     <section className="saved-articles">
