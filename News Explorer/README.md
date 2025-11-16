@@ -30,7 +30,7 @@ Username: user
 ## 🚀 Live Demo
 🔗 [View the project here](https://rvega-news-ex.netlify.app/)
 
-
+![WTWRVEGA Screenshot]- https://ibb.co/vxDMf7nC
 
 ---
 ## 🚀 Local Demo with Command: netlify dev
@@ -58,3 +58,10 @@ font-end will run on : http://localhost:5173/
 - **HTML5**  
 - **CSS3** (responsive design with Flexbox & Grid)  
 - **Simulated Backend API** 
+
+---
+
+## ✅ Conclusion
+The result is a **fully functional, responsive news search application** where users can search, view, and save news articles while testing authentication flows in a simulated backend environment. The project demonstrates integration between a React frontend, simulated backend API, and third-party news services, producing a professional, usable, and responsive application.
+
+---
