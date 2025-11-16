@@ -1,0 +1,357 @@
+.header {
+  color: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  border-bottom: 1px solid #ffffff33;
+  height: 80px;
+}
+
+.header--black {
+  color: #1a1b22;
+  background-color: #ffffff;
+  border-bottom: 1px solid #0a0a0a33;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 104px;
+  margin-right: 104px;
+  position: relative;
+  height: 80px;
+}
+
+.header__mobile-menu-icon {
+  visibility: hidden;
+  position: absolute;
+}
+
+.header__title {
+  font-family: "Roboto Slab";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  width: 200px;
+  height: 24px;
+  position: relative;
+  margin-top: 30px;
+}
+
+.header__home-button {
+  cursor: pointer;
+  text-decoration: none;
+  background-color: transparent;
+  color: #b6bcbf;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  margin-top: 30px;
+  margin-bottom: 0;
+  margin-right: 42px;
+  padding-bottom: 23px;
+}
+
+.header__home-button--black {
+  color: #1a1b22;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 30px;
+  margin-bottom: 0;
+  padding-bottom: 21px;
+}
+
+.header__home-button.is-active {
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+.header__signin-button {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 500;
+  width: 176px;
+  height: 48px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 1);
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 100px;
+  padding: 0;
+  background-color: transparent;
+  margin-top: 19px;
+}
+
+.header__signin-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.header__nav {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header__saved-articles {
+  align-content: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #b6bcbf;
+  width: 114px;
+  height: 24px;
+  font-size: 18px;
+  margin-top: 30px;
+  margin-bottom: 0;
+  margin-left: 34px;
+  margin-right: 64px;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  padding-bottom: 24px;
+}
+
+.header__saved-articles--black {
+  color: #1a1b22;
+  font-family: "Roboto";
+  width: 114px;
+  height: 24px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 30px;
+  margin-bottom: 0;
+  padding-bottom: 24px;
+}
+
+.header__saved-articles.is-active--black {
+  color: #1a1b22;
+  border-bottom: 2px solid #1a1b22;
+}
+
+.header__profile-button {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 500;
+  width: 112px;
+  height: 48px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 100px;
+  padding: 12px 15px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  color: #ffffff;
+  margin-top: 19px;
+  cursor: pointer;
+}
+
+.header__profile-button--black {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 500;
+  width: 112px;
+  height: 48px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 100px;
+  padding: 12px 15px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 1px solid black;
+  color: black;
+  cursor: pointer;
+}
+
+.header__profile-button-icon {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 66px;
+    max-width: 768px;
+  }
+
+  .header__title {
+    margin-left: 0;
+    margin-top: 22.73px;
+  }
+
+  .header__saved-articles.is-active--black {
+  padding-bottom: 17px;
+}
+
+  .header__title.header__title--signed-in {
+    margin-right: 132px;
+  }
+
+  .header__title.header__title--signed-out {
+    margin-right: 256px;
+  }
+
+  .header__home-button.header__home--signed-in {
+    margin-right: 0;
+  }
+
+  .header__home-button.header__home--signed-out {
+    margin-right: 16px;
+  }
+
+  .header__container {
+    display: flex;
+    max-width: fit-content;
+    margin-left: 40px;
+    margin-right: 0;
+    margin-top: 0;
+  }
+
+  .header__home-button {
+    font-size: 16px;
+    margin-top: 22px;
+    margin-right: 0;
+    width: 64px;
+    height: 24px;
+    text-align-last: center;
+    padding-bottom: 19px;
+  }
+  .header__signin-button {
+    margin-top: 14px;
+    width: 152px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .header__saved-articles {
+    width: 160px;
+    height: 24px;
+    margin-top: 22.73px;
+    margin-left: 16px;
+    margin-right: 6px;
+    font-size: 16px;
+    margin-right: 16px;
+  }
+
+  .header__profile-button {
+    font-size: 16px;
+    width: 100px;
+    height: 40px;
+    gap: 13px;
+    margin-top: 14px;
+    margin-right: 16px;
+  }
+}
+
+@media (max-width: 672px) {
+  .header__title {
+    font-family: "Roboto Slab";
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    padding: 0;
+    width: 117px;
+    height: 24px;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+  }
+
+  .header__mobile-menu-icon {
+    background-color: transparent;
+    border-style: none;
+    width: 24px;
+    height: 24px;
+    visibility: visible;
+    top: 16px;
+    right: 16px;
+    padding: 0;
+  }
+
+  .header__container {
+    display: flex;
+    margin: 16px;
+    max-width: 100%;
+  }
+
+  .header__nav {
+    flex-direction: column;
+  }
+
+  .header-container-text {
+    margin: 0;
+  }
+
+  .header__home-button,
+  .header__signin-button {
+    visibility: hidden;
+  }
+
+  .header__saved-articles,
+  .header__profile-button,
+  .header__saved-articles--black,
+  .header__home-button--black {
+    visibility: hidden;
+  }
+  .header--black {
+    min-width: 300px;
+    max-height: 56px;
+  }
+  .header__title.header__title--signed-in {
+    margin: 0;
+  }
+
+  .header__title.header__title--signed-out {
+    margin: 0;
+  }
+
+  .header__home-button.header__home--signed-in {
+    margin: 0;
+  }
+
+  .header__home-button.header__home--signed-out {
+    margin: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .header {
+    height: 56px;
+  }
+
+  .header__container {
+    margin: 0;
+  }
+}
